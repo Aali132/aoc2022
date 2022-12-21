@@ -1,6 +1,6 @@
 .SUFFIXES:
 
-DAYS := $(shell seq 1 19)
+DAYS := $(shell seq 1 20)
 PROBLEMS := $(foreach day,$(DAYS),$(day)a $(day)b)
 EXAMPLES := $(foreach day,$(DAYS),$(day)a_example $(day)b_example)
 
@@ -14,11 +14,11 @@ EXAMPLES := $(foreach day,$(DAYS),$(day)a_example $(day)b_example)
 
 build/%a : %/a.hs aoc.hs
 	@mkdir build/ 2> /dev/null || true
-	@ghc aoc.hs $< -o $@
+	@ghc -O2 aoc.hs $< -o $@
 
 build/%b : %/b.hs aoc.hs
 	@mkdir build/ 2> /dev/null || true
-	@ghc aoc.hs $< -o $@
+	@ghc -O2 aoc.hs $< -o $@
 
 %a : build/%a %/input
 	@echo -n "$@: "
