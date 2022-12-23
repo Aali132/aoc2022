@@ -1,6 +1,6 @@
 .SUFFIXES:
 
-DAYS := $(shell seq 1 21)
+DAYS := $(shell seq 1 22)
 PROBLEMS := $(foreach day,$(DAYS),$(day)a $(day)b)
 EXAMPLES := $(foreach day,$(DAYS),$(day)a_example $(day)b_example)
 
